@@ -1,0 +1,171 @@
+/*=============== ACCORDION ===============*/
+.accordionlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block-1, .block-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion-block-item2 {
+  margin-left: 42px;
+}
+
+.accordion-block-item-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+    color: #1a1a1a;
+  }
+  p {
+    font-size: 12px
+  }
+
+  i {
+    font-size: 32px;
+    margin-top: 8px;
+    color: #1a1a1a;
+    &:hover {
+      color: #00b894;
+    }
+  }
+  margin-left: 100px;
+}
+
+.accordion{
+  display: grid;
+  align-content: center;
+  height: 100vh;
+
+  &__container{
+      display: grid;
+      row-gap: .75rem;
+      padding: 2rem 1rem;
+      background-color: $container-color;
+      border-radius: .5rem;
+      box-shadow: 0 12px 32px hsla(0, 0%, 20%, 0.1);
+  }
+  &__title{
+      font-size: $small-fontsize;
+      color: $title-color;
+      font-weight: 400;
+      margin-top: .15rem;
+      transition: .2s;
+      max-width: 550px;
+
+      span {
+        font-weight: bold;
+      }
+  }
+
+  &__speaker{
+    font-size: $small-fontsize;
+    color: $title-color;
+    font-weight: 400;
+    margin-top: .15rem;
+    transition: .2s;
+  }
+
+  &__header{
+      display: flex;
+      flex-direction: column;
+      column-gap: .5rem;
+      padding: 1.25rem 1.25rem 1.25rem 1rem;
+      cursor: pointer;
+  }
+  &__description{
+      padding: 0 1.25rem 1.25rem 3rem;
+      font-size: $smaller-fontsize;
+
+      span {
+        font-weight: bold;
+      }
+  }
+  &__icon{
+      font-size: 1.5rem;
+      height: max-content;
+      color: $title-color;
+      transition: .3s;
+  }
+
+  &__item{
+      box-shadow: 0 2px 6px hsla(0, 0%, 15%, 0.1);
+      background-color: $container-color;
+      border-radius: .25rem;
+      position: relative;
+      transition: all .25s ease;
+
+      &::after{
+          content: '';
+          background-color: $first-color;
+          width: 5px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: .25rem 0 0 .25rem;
+      }
+
+      // Optional colors
+      &:nth-child(1){
+          background-color: #FBFFF5;
+
+          &::after{
+              background-color: #bdff5f;
+          }
+      }
+      &:nth-child(2){
+          background-color: #FBFFF5;
+
+          &::after{
+              background-color: #bdff5f;
+          }
+      }
+      &:nth-child(3){
+          background-color: #FBFFF5;
+
+          &::after{
+              background-color: #bdff5f;
+          }
+      }
+      &:nth-child(4){
+          background-color: #FBFFF5;
+
+          &::after{
+              background-color: #bdff5f;
+          }
+      }
+  }
+
+  &__content{
+      overflow: hidden;
+      height: 0;
+      transition: all .25s ease;
+  }
+}
+
+/*Rotate icon and add font weight to titles*/
+.accordion-open{
+  // Add rotation to icon
+  & .accordion__icon{
+      transform: rotate(45deg);
+  }
+      
+  // Add font weight to the title of the open accordion
+  & .accordion__title{
+      font-weight: 600;
+  }
+}
